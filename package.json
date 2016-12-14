@@ -1,22 +1,23 @@
 {
-  "name": "boke",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "supervisor ./app.js"
-  },
-  "dependencies": {
-    "async": "^2.1.4",
-    "body-parser": "^1.15.2",
-    "cookie-parser": "^1.4.3",
-    "cookie-session": "^2.0.0-alpha.2",
-    "debug": "~2.2.0",
-    "ejs": "^2.4.2",
-    "express": "^4.13.4",
-    "express-session": "^1.14.2",
-    "morgan": "~1.7.0",
-    "multer": "^1.2.0",
-    "mysql": "^2.12.0",
-    "serve-favicon": "~2.3.0"
-  }
+    "name": "nodeapp",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "supervisor ./app.js"
+    },
+    "config" : { "port" : "3000" },
+    "dependencies": {
+        "async": "^2.1.4",
+        "body-parser": "^1.15.2",
+        "cookie-parser": "^1.4.3",
+        "cookie-session": "^2.0.0-alpha.2",
+        "debug": "~2.2.0",
+        "ejs": "^2.4.2",
+        "express": "^4.13.4",
+        "express-session": "^1.14.2",
+        "morgan": "~1.7.0",
+        "multer": "^1.2.0",
+        "mysql": "^2.12.0",
+        "serve-favicon": "~2.3.0"
+    }
 }

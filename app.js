@@ -10,14 +10,14 @@ var routerConfig = require('./lib/routerConfig')
 var app = express();
 var router = express.Router();
 //设置端口
-app.set('port', 8080 || 3000);
+app.set('port', process.env.PORT || 3000);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logger('develop'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -32,7 +32,6 @@ routerConfig(app, {
     }
 });
 
-
 //初始化权限控制的路由
 app.all('*',function(req,res,next){
     console.log('============'+req.originalUrl);
@@ -44,7 +43,6 @@ app.all('*',function(req,res,next){
     }
 });
 
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
@@ -52,11 +50,12 @@ app.use(function(req, res, next) {
     next(err);
 });
 
+
 // error handlers
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (app.get('env') === 'develop') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
@@ -76,8 +75,15 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + app.get('port'));
+
+//develep environment handler
+if (app.get('env') === 'develop'){
+
+}
+
+app.listen(process.env.npm_package_config_port, function() {
+    console.info('the run environment is '+process.env.NODE_ENV);
+    console.log('Express server listening on port ' + process.env.npm_package_config_port);
 });
 
 module.exports = app;
