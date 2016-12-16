@@ -19,3 +19,5 @@ npm config set nodeapp:port 8080
 
 （3）项目根目录下另开一个命令窗口npm start。（只针对本项目）
 
+     其他时候 需要 node --debug app.js
+
