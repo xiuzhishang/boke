@@ -82,7 +82,7 @@ if (app.get('env') === 'develop'){
 }
 
 app.listen(process.env.npm_package_config_port, function() {
-    console.info('the run environment is '+process.env.NODE_ENV);
+    console.info('**************the run environment is '+process.env.NODE_ENV+'**************');
     console.log('Express server listening on port ' + process.env.npm_package_config_port);
 });
 
